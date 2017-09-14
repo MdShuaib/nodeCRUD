@@ -10,8 +10,8 @@ app.controller('editProductCtrl', ['$scope', '$http', '$location', '$routeParams
 			console.log(response);
 		});	
 	}
-	$scope.updateProduct = function (form) {
-		if(form.$valid) {
+	$scope.updateProduct = function () {
+		// if(form.$valid) {
 			$http({
 				method:'PUT',
 				url:"http://localhost:8080/myapi/product/" + $routeParams.id,
@@ -21,7 +21,7 @@ app.controller('editProductCtrl', ['$scope', '$http', '$location', '$routeParams
 			}, function myError(response){
 				console.log(response);
 			});	
-		}
+		// }
 	};
 
 

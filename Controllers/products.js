@@ -24,7 +24,7 @@ var products = {
 	create: function (req, res) {
 		var product = new productModel();
 		product.name = req.body.name;
-		product.price = req.body.name;
+		product.price = req.body.price;
 		product.save(function(err) {
 			if(err){
 				res.status(500).json({ status: 'error', message: "Database Error:" + err,  docs: ""});

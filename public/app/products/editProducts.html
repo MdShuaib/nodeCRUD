@@ -1,4 +1,4 @@
-<form name=form ng-click="updateProduct(form)" ng-init="getProductById()">
+<form  ng-init="getProductById()">
     
     <div class="form-group">
         <label for="email">Product Name</label>
@@ -9,7 +9,7 @@
         <label for="pwd">Price:</label>
         <input type="text" ng-model="productById.price" class="form-control" name="price" required>
     </div>
-    <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Save</button>
+    <button type="submit" ng-click="updateProduct()" class="btn btn-primary">Save</button>
     <button type="button" class="btn btn-default" >Cancel</button>
 
 </form>
