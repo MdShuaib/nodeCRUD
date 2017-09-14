@@ -4,11 +4,17 @@ app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
 	when("/add", {
 		templateUrl: "app/products/addProducts.html", 
-		controller: "productsCtrl"
+		controller: "addProductCtrl"
 	})
+
+	.when("/edit/:id", {
+		templateUrl: "app/products/editProducts.html", 
+		controller: "editProductCtrl"
+	})
+	
 	
 	.otherwise({
 		templateUrl: "app/products/allProducts.html", 
-		controller: "productsCtrl"
+		controller: "allProductsCtrl"
 	});
 }]);

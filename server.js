@@ -12,7 +12,7 @@ var config = require('./config/config');
 
 app.use(bodyParser.json()); // parse application/json 
 
-app.use(express.static('./public')); 
+app.use(express.static('./uploads')); 
 
 
 // CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests
@@ -23,8 +23,7 @@ app.all('/*', function(req, res, next) {
   		res.header("Access-Control-Allow-Headers",'Content-Type, Accept, X-Access-Token');
        
 		if(req.method == 'OPTIONS') {
-       		 console.log("Options is : " + req.method);
-			res.status(200).end();
+       		res.status(200).end();
 		}else {
 			next();	
 		}
@@ -38,6 +37,8 @@ app.use('/', require('./routes')); // pass our application into our routes
 app.use(function(req, res, next){
 	res.status(404).json({status: "Page not found"}).end();
 });
+
+
 
 // start app ===============================================
 app.set('port', config.port);
