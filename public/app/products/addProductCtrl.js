@@ -1,12 +1,13 @@
-app.controller('addProductCtrl', ['$scope', '$http', '$location', function($scope, $http, $location){
+app.controller('addProductCtrl', ['$scope', '$http', '$location', '$uibModalInstance', function($scope, $http, $location, $uibModalInstance){
 	
-	$scope.submit = function () {
+	$scope.addUser = function () {
 		// if(form.$valid) {
 			$http({
 				method:'POST',
-				url:"http://localhost:8080/myapi/product/",
-				data: {"name":$scope.name,"price":Number($scope.price)}
+				url:"secure/user",
+				data: $scope.user
 			}).then(function mySuccess(response) {
+				console.log(response);
 				$location.path('/')
 			}, function myError(response){
 				console.log(response);
@@ -14,4 +15,9 @@ app.controller('addProductCtrl', ['$scope', '$http', '$location', function($scop
 		// }
 	};
 
+	$scope.cancel = function() {
+        $uibModalInstance.dismiss('cancel');
+    };
 }])
+
+

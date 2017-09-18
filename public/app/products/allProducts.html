@@ -1,21 +1,22 @@
 <div class="table-responsive">          
     <span class="pull-right">
-        <button class="btn btn-primary" ng-click="location()">Add</button>
+        <button class="btn btn-small btn-success" ng-click="location()">Add user</button>
     </span>
     <table class="table" ng-init="initialize()">
         <thead>
             <tr>
                 <th>#</th>
                 <th>Name</th>
-                <th>Price</th>
-                <th>Actions</th>
+                <th>last name</th>
+                <th>email</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="list in productData">
                 <td>{{$index + 1}}</td>
-                <td>{{list.name}}</td>
-                <td>{{list.price}}</td>
+                <td>{{list.firstName}}</td>
+                <td>{{list.lastName}}</td>
+                <td>{{list.email}}</td>
                 <td>
                     <button class="btn btn-warning btn-xs" ng-click="editProduct(list._id)">Edit</button>
                     <button class="btn btn-danger btn-xs" ng-click = "deleteProduct(list._id)">Delete</button>

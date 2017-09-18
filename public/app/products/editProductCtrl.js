@@ -3,7 +3,7 @@ app.controller('editProductCtrl', ['$scope', '$http', '$location', '$routeParams
 	$scope.getProductById = function() {
 		$http({
 			method:'GET',
-			url:"http://localhost:8080/myapi/product/" + $routeParams.id,
+			url:"secure/user/" + $routeParams.id,
 		}).then(function mySuccess(response) {
 			$scope.productById = response.data.doc
 		}, function myError(response){
@@ -14,7 +14,7 @@ app.controller('editProductCtrl', ['$scope', '$http', '$location', '$routeParams
 		// if(form.$valid) {
 			$http({
 				method:'PUT',
-				url:"http://localhost:8080/myapi/product/" + $routeParams.id,
+				url:"secure/user/" + $routeParams.id,
 				data: $scope.productById
 			}).then(function mySuccess(response) {
 				$location.path('/')

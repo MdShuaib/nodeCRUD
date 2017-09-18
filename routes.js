@@ -3,12 +3,10 @@ var router = express.Router();
 var products = require('./controllers/products.js');
 
 
-router.get('/myapi/products/', products.getAll);
-router.get('/myapi/product/:id', products.getOne);
-
-router.post('/myapi/product/', products.create);
-
-router.put('/myapi/product/:id', products.update);
-router.delete('/myapi/product/:id', products.delete);
+router.get('/secure/users/', products.getAll);
+router.get('/secure/user/:id', products.getOne);
+router.post('/secure/user', products.create);
+router.put('/secure/user/:id', products.update);
+router.delete('/secure/user/:id', products.delete);
 
 module.exports = router;

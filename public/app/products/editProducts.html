@@ -1,15 +1,25 @@
-<form  ng-init="getProductById()">
-    
-    <div class="form-group">
-        <label for="email">Product Name</label>
-        <input type="text" ng-model="productById.name" class="form-control" name="name" required>
-    </div>
-    
-    <div class="form-group">
-        <label for="pwd">Price:</label>
-        <input type="text" ng-model="productById.price" class="form-control" name="price" required>
-    </div>
-    <button type="submit" ng-click="updateProduct()" class="btn btn-primary">Save</button>
-    <button type="button" class="btn btn-default" >Cancel</button>
 
-</form>
+<div class="container"  ng-init="getProductById()">
+    <form name="frmAddCity" role="form">
+        <div class="form-group">
+            <label for="">First Name<span class="symbol required "></span></label>
+            <input type="text" name="firstName" class="form-control" ng-model="productById.firstName" required />
+        </div>
+        <div class="form-group">
+            <label for="">Last Name <span class="symbol required "></span></label>
+            <input type="text" name="lastName" class="form-control" ng-model="productById.lastName" required />
+        </div>
+        <div class="form-group">
+            <label for="">Email <span class="symbol required "></span></label>
+            <input type="text" name="email" class="form-control" ng-model="productById.email" required />
+        </div>
+        <div class="form-group">
+            <label for=""> Password <span class="symbol required "></span></label>
+            <input type="password" name="Password" class="form-control" ng-model="productById.password" required />
+        </div>
+    </form>
+</div>
+<div class="container">
+    <button class="btn btn-primary" type="button" ng-click="updateProduct()">update</button>
+    <a href="javascript:;" ng-click="cancel()" class="block-link">Cancel</a>
+</div>

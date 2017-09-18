@@ -23,8 +23,10 @@ var products = {
 
 	create: function (req, res) {
 		var product = new productModel();
-		product.name = req.body.name;
-		product.price = req.body.price;
+		product.firstName = req.body.firstName;
+		product.lastName = req.body.lastName;
+		product.email = req.body.email;
+		product.password = req.body.password;
 		product.save(function(err) {
 			if(err){
 				res.status(500).json({ status: 'error', message: "Database Error:" + err,  docs: ""});
@@ -35,7 +37,6 @@ var products = {
 	},
 
 	delete: function (req, res) {
-		console.log("in delete API")
 		productModel.remove({_id: req.params.id}, function(err) {
 			if(err){
 				res.status(500).json({ status: 'error', message: "Database Error:" + err,  docs: ""});
@@ -49,9 +50,10 @@ var products = {
 		productModel.findById(req.params.id, function(err, doc) {
 			if(err)
 				res.status(500).json({ status: 'error', message: "Database Error:" + err,  docs: ""});
-				
-				doc.name = req.body.name;
-				doc.price = req.body.price;
+				doc.firstName = req.body.firstName;
+				doc.lastName = req.body.lastName;
+				doc.email = req.body.email;
+				doc.password = req.body.password;
 				doc.save(function(err) {
 					if(err){
 						res.status(500).json({ status: 'error', message: "Database Error:" + err,  docs: ""});
