@@ -1,4 +1,4 @@
-app.controller('addProductCtrl', ['$scope', '$http', '$location', '$uibModalInstance', function($scope, $http, $location, $uibModalInstance){
+app.controller('addProductCtrl', ['$scope', '$http', '$location', function($scope, $http, $location){
 	
 	$scope.addUser = function () {
 		// if(form.$valid) {
@@ -16,7 +16,7 @@ app.controller('addProductCtrl', ['$scope', '$http', '$location', '$uibModalInst
 	};
 
 	$scope.cancel = function() {
-        $uibModalInstance.dismiss('cancel');
+        $location.path('/')
     };
 }])
 
